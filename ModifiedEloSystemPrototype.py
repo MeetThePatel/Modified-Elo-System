@@ -35,11 +35,15 @@ def ComputeNewElo(e_A, S_A, e_B, S_B, winner):
         e_B = e_B + (0.1 * e_B * mu_E * mu_delta_S)
     return [e_A, e_B]
 
-player1E = 750
-player1S = 5
-player2E = 900
-player2S = 11
-winner = True
+player1E = input("What is Player 1's Elo rating? ")
+player2E = input("What is Player 2's Elo rating? ")
+player1S = input("What is Player 1's score? ")
+player2S = input("What is Player 2's score? ")
+
+if player1S > player2S:
+    winner = False
+else:
+    winner = True
 
 newElos = ComputeNewElo(player1E, player1S, player2E, player2S, winner)
 newElos[0] = round(newElos[0])
