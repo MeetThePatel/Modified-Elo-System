@@ -28,11 +28,11 @@ def ComputeNewElo(e_A, S_A, e_B, S_B, winner):
     mu_delta_S = ComputeMuDeltaS(delta_S)
 #    print("mu_delta_S = " + str(mu_delta_S))
     if winner == False:
-        e_A = e_A + (0.1*e_A*mu_E*mu_delta_S)
-        e_B = e_B - (0.1*e_B*mu_E*mu_delta_S)
+        e_A = e_A + (0.1 * e_A * mu_E * mu_delta_S)
+        e_B = e_B - (0.1 * e_B * mu_E * mu_delta_S)
     if winner == True:
-        e_A = e_A - (0.1*e_A*mu_E*mu_delta_S)
-        e_B = e_B + (0.1*e_B*mu_E*mu_delta_S)
+        e_A = e_A - (0.1 * e_A * mu_E * mu_delta_S)
+        e_B = e_B + (0.1 * e_B * mu_E * mu_delta_S)
     return [e_A, e_B]
 
 player1E = 750
